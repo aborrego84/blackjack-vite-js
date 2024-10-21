@@ -14,18 +14,20 @@ import { takeCard,acumulatePoints,createCard,whoWin } from "./index.js";
  */
 export const computerTurn = (points, deck, playersPoints,divPlayersCards, pointsLabels) => {
     let computerPoints = 0;
-    do {
-        const card= takeCard(deck);
-        
-        computerPoints = acumulatePoints(card, playersPoints.length - 1, playersPoints, pointsLabels);//computer
-        createCard(card, playersPoints.length - 1, divPlayersCards);//computer
-        
-        if( points > 21){
-            break;
-        }
-    } while( (computerPoints < 21) && ( computerPoints < points ) );
+    //setTimeout(() => {
+        do {
+            const card= takeCard(deck);
+            
+            computerPoints = acumulatePoints(card, playersPoints.length - 1, playersPoints, pointsLabels);//computer
+            createCard(card, playersPoints.length - 1, divPlayersCards);//computer
+            
+            if( points > 21){
+                break;
+            }
+        } while( (computerPoints < 21) && ( computerPoints < points ) );
+    //}, 100);
 
-    setTimeout(whoWin( playersPoints ),200);
+    setTimeout(whoWin( playersPoints ),50);
     
 
 }

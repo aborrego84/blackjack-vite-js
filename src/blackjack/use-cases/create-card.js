@@ -8,9 +8,12 @@
  * @returns {void} show the card in the screen
  */
 
-export const createCard = (card, turn, divPlayersCards) => {    
-    const imgCard = document.createElement('img');    
+export const createCard = (card, turn, divPlayersCards) => {  
+    setTimeout(() => {
+        const imgCard = document.createElement('img');    
         imgCard.src =`../../blackjack-vite-js/assets/cards/${ card }.png`;//add image
         imgCard.classList.add('card');//add css
-        divPlayersCards[turn].append(imgCard); 
+        divPlayersCards[turn].append(imgCard);
+    },100); 
+     
 }
