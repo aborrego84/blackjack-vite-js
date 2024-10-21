@@ -25,7 +25,7 @@ export const computerTurn = (points, deck, playersPoints,divPlayersCards, points
         }
     } while( (computerPoints < 21) && ( computerPoints < points ) );
 
-    whoWin( playersPoints );
+    setTimeout(whoWin( playersPoints ),200);
     
 
 }
