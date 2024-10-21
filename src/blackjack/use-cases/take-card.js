@@ -7,9 +7,11 @@
  */
 
 export const takeCard = (deck) => {
-    if(!deck || deck.length === 0){
+    setTimeout(() => {
+        if(!deck || deck.length === 0){
         throw 'There are no cards in deck';
     }
-    return deck.pop();    
+        return deck.pop();    
+    }, 100 );
     
 }
