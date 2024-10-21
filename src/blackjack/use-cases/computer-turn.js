@@ -14,7 +14,7 @@ import { takeCard,acumulatePoints,createCard,whoWin } from "./index.js";
  */
 export const computerTurn = (points, deck, playersPoints,divPlayersCards, pointsLabels) => {
     let computerPoints = 0;
-    //setTimeout(() => {
+    
         do {
             const card= takeCard(deck);
             
@@ -24,10 +24,9 @@ export const computerTurn = (points, deck, playersPoints,divPlayersCards, points
             if( points > 21){
                 break;
             }
-        } while( (computerPoints < 21) && ( computerPoints < points ) );
-    //}, 100);
+        } while( (computerPoints < 21) && ( computerPoints < points ) );    
 
-    setTimeout(whoWin( playersPoints ),50);
+    return whoWin( playersPoints );
     
 
 }

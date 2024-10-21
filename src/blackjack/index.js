@@ -89,25 +89,25 @@ const myModule = (() => {
   btnGiveCard.addEventListener('click', () => {
       let card= takeCard(deck);
       let playerPoint = 0;
-      playerPoint = acumulatePoints(card, 0, playersPoints, pointsLabels);//write points in html
-      createCard(card, 0, divPlayersCards);//write image in html
-      
-      if( playerPoint > 21 ){
-          btnGiveCard.disabled = true;
-          btnIStay.disabled = true;
-          pointsLabels[0].innerText = playerPoint +'- You lose';//write points in html('You lose');
-          computerTurn(playerPoint, deck, playersPoints);
-      } else if( playerPoint === 21 ){
-          btnGiveCard.disabled = true;
-          btnIStay.disabled = true;
-          pointsLabels[0].innerText = '21, Great!!!';
-          computerTurn( playerPoint, deck, playersPoints,divPlayersCards, pointsLabels );
-      }
-  });
+      setTimeout(() => {
+        playerPoint = acumulatePoints(card, 0, playersPoints, pointsLabels);//write points in html
+        createCard(card, 0, divPlayersCards);//write image in html
+        
+        if( playerPoint > 21 ){
+            btnGiveCard.disabled = true;
+            btnIStay.disabled = true;
+            pointsLabels[0].innerText = playerPoint +' ' + computerTurn(playerPoint, deck, playersPoints,divPlayersCards, pointsLabels);
+        } else if( playerPoint === 21 ){
+            btnGiveCard.disabled = true;
+            btnIStay.disabled = true;
+            pointsLabels[0].innerText = '21, Great!!! ' + computerTurn( playerPoint, deck, playersPoints,divPlayersCards, pointsLabels );
+        }  
+      }, 100);
+    });
   btnIStay.addEventListener('click', () => {
       btnGiveCard.disabled = true;
       btnIStay.disabled = true;
-      computerTurn( playersPoints[0], deck, playersPoints,divPlayersCards, pointsLabels );
+      pointsLabels[0].innerText = playersPoints[0] + ' ' + computerTurn( playersPoints[0], deck, playersPoints,divPlayersCards, pointsLabels );
   });
   btnNewGame.addEventListener('click', () => {   
       
