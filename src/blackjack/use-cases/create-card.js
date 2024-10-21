@@ -10,7 +10,7 @@
 
 export const createCard = (card, turn, divPlayersCards) => {    
     const imgCard = document.createElement('img');    
-        imgCard.src =`../../assets/cards/${ card }.png`;//add image
+        imgCard.src =`../../blackjack-vite-js/assets/cards/${ card }.png`;//add image
         imgCard.classList.add('card');//add css
         divPlayersCards[turn].append(imgCard); 
 }
