@@ -14,5 +14,5 @@ export const whoWin = (playersPoints) => {
                   : (points > computerPoints) ? 'You win' : 'You lose';
 
       alert(message);
-      }, 20 );
+      }, 200 );
   }
